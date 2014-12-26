@@ -1,0 +1,241 @@
+<!--header-->
+<link href="../Shop/CustomUc/C45FiftyPercent201409/css/from_style.css" rel="stylesheet" type="text/css" />
+<link href="../Shop/CustomUc/C45FiftyPercent201409/css/building.css" rel="stylesheet" type="text/css" />
+<link href="../Shop/CustomUc/C45FiftyPercent201409/css/styles.css" rel="stylesheet"  />
+<link href="../Shop/CustomUc/C45FiftyPercent201409/facefiles/facebox.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="../Shop/CustomUc/C45FiftyPercent201409/css/flexdropdown.css" rel="stylesheet" type="text/css" />
+<link href="../Shop/CustomUc/C45FiftyPercent201409/css/checkout_building.css" rel="stylesheet" type="text/css" />
+<link href="../Shop/CustomUc/C45FiftyPercent201409/css/lightwindow.css" rel="stylesheet" type="text/css" />
+<link href="../Shop/CustomUc/C45FiftyPercent201409/js/fancybox/jquery.fancybox-1.3.4.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../Shop/CustomUc/C45FiftyPercent201409/js/gradualfader.js"></script>
+<!--<script type="text/javascript" src="../Shop/CustomUc/C45FiftyPercent201409/facefiles/jquery-1.2.2.pack.js"></script>-->
+<script type="text/javascript" src="../Shop/CustomUc/C45FiftyPercent201409/js/SpryEffects.js"></script>
+<script type="text/javascript" src="../Shop/CustomUc/C45FiftyPercent201409/js/flexdropdown.js"></script>
+<!--<script type="text/javascript" src="../Shop/CustomUc/C45FiftyPercent201409/js/jquery-latest.min.js"></script>-->
+<script type="text/javascript" src="../Shop/CustomUc/C45FiftyPercent201409/js/ddaccordion.js"></script>
+<script type="text/javascript" src="../Shop/CustomUc/C45FiftyPercent201409/js/FancyZoom.js"></script>
+<script type="text/javascript" src="../Shop/CustomUc/C45FiftyPercent201409/js/FancyZoomHTML.js"></script>
+<!--<script type="text/javascript" src="../Shop/CustomUc/C45FiftyPercent201409/javascript/prototype.js"></script>
+<script type="text/javascript" src="../Shop/CustomUc/C45FiftyPercent201409/javascript/effects.js"></script>
+<script type="text/javascript" src="../Shop/CustomUc/C45FiftyPercent201409/javascript/lightwindow.js"></script>-->
+<script type="text/javascript" src="../Shop/CustomUc/C45FiftyPercent201409/js/fancybox/jquery.fancybox-1.3.4.js"></script>
+<script type="text/javascript" src="../Shop/CustomUc/C45FiftyPercent201409/js/custom.js"></script>
+<script type="text/javascript">
+$=jQuery;
+function MM_showHideLayers() { //v9.0
+  var i, p, v, obj, args = MM_showHideLayers.arguments;
+  for (i = 0; i < (args.length - 2); i += 3)
+    with(document) if (getElementById && ((obj = getElementById(args[i])) != null)) {
+      v = args[i + 2];
+      if (obj.style) {
+        obj = obj.style;
+        v = (v == 'show') ? 'visible' : (v == 'hide') ? 'hidden' : v;
+      }
+      obj.visibility = v;
+    }
+}
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-3774628-10']);
+_gaq.push(['_trackPageview']);
+(function() {
+  var ga = document.createElement('script');
+  ga.type = 'text/javascript';
+  ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(ga, s);
+})();
+$(function() {
+  // 用來顯示大圖片用
+  var $showImage = $('#show-image');
+  // 當滑鼠移到 .abgne-block-20120106 中的某一個超連結時
+  $(".abgne-block").on("mouseover","a",function() {
+    // 把 #show-image 的 src 改成被移到的超連結的位置
+    //$showImage.attr('src', $(this).attr('href'));
+    var $this = $(this),
+      _src = $this.attr('href');
+    if ($showImage.attr('src') != _src) {
+      $showImage.stop(false, true).fadeTo(0, 0).attr('src', _src).stop(false, true).fadeTo(400, 1);
+    }
+  }).on("click","a",function() {
+    // 如果超連結被點擊時, 取消連結動作
+    return false;
+  });
+});
+$(function() {
+  var t = $("#text_box");
+  $("#add").click(function() {
+    var num = parseInt(t.val()) + 1;
+    if (num>10) {
+    	num=10;
+    }
+    t.val(num);
+    //setTotal();
+  })
+  $("#min").click(function() {
+    var num = parseInt(t.val()) - 1;
+    if (num<1) {
+    	num=1;
+    }
+    t.val(num);
+    //setTotal();
+  })
+  //function setTotal() {
+  //  $("#total").html((parseInt(t.val()) * 390).toFixed(0));
+  //}
+  //setTotal();
+})
+ddaccordion.init({
+  headerclass: "submenuheader", //Shared CSS class name of headers group
+  contentclass: "submenu", //Shared CSS class name of contents group
+  revealtype: "click", //Reveal content when user clicks or onmouseover the header? Valid value: "click", "clickgo", or "mouseover"
+  mouseoverdelay: 200, //if revealtype="mouseover", set delay in milliseconds before header expands onMouseover
+  collapseprev: true, //Collapse previous content (so only one open at any time)? true/false 
+  defaultexpanded: [], //index of content(s) open by default [index1, index2, etc] [] denotes no content
+  onemustopen: false, //Specify whether at least one header should be open always (so never all headers closed)
+  animatedefault: false, //Should contents open by default be animated into view?
+  persiststate: false, //persist state of opened contents within browser session?
+  toggleclass: ["", ""], //Two CSS classes to be applied to the header when it's collapsed and expanded, respectively ["class1", "class2"]
+  togglehtml: ["suffix", "<img src='../Shop/CustomUc/C45FiftyPercent201409/images/plus2.gif' class='statusicon' />", "<img src='../Shop/CustomUc/C45FiftyPercent201409/images/minus2.gif' class='statusicon' />"], //Additional HTML added to the header when it's collapsed and expanded, respectively  ["position", "html1", "html2"] (see docs)
+  animatespeed: "fast", //speed of animation: integer in milliseconds (ie: 200), or keywords "fast", "normal", or "slow"
+  oninit: function(headers, expandedindices) { //custom code to run when headers have initalized
+  	if (headers.length>0) {
+  	  headers[0].click();	
+  	}
+    //do nothing
+  },
+  onopenclose: function(header, index, state, isuseractivated) { //custom code to run whenever a header is opened or closed
+    //do nothing
+  }
+});
+function MM_openBrWindow(theURL, winName, features) { //v2.0
+  window.open(theURL, winName, features);
+}
+function openwindow(url, name, iWidth, iHeight) {
+  var url; //轉向網頁的地址; 
+  var name; //網頁名稱，可為空; 
+  var iWidth; //彈出窗口的寬度; 
+  var iHeight; //彈出窗口的高度; 
+  var iTop = (window.screen.availHeight - 30 - iHeight) / 2; //獲得窗口的垂直位置; 
+  var iLeft = (window.screen.availWidth - 10 - iWidth) / 2; //獲得窗口的水平位置; 
+  window.open(url, name, 'height=' + iHeight + ',,innerHeight=' + iHeight + ',width=' + iWidth + ',innerWidth=' + iWidth + ',top=' + iTop + ',left =' + iLeft + ',toolbar=no,menubar=no,scrollbars=auto,resizeable=no,location=no,status=no');
+}
+//function mymedia() { // 自訂函數定義裝置解析度取得與判斷
+//  var myscreen = screen.availWidth; // 取得可瀏覽頁面寬度記錄在變數 myscreen 中
+  // 如果頁面寬度小於 321，轉址到手機版頁面並停止後續程式
+//  if (myscreen < 321) {
+//    document.location.href = "device/web/index.html";
+//    return;
+//  }
+  // 如果頁面寬度小於 769，轉址到平板電腦版頁面並停止後續程式
+//  if (myscreen < 769) {
+//    document.location.href = "device/web/index.html";
+//    return;
+//  }
+//}
+//mymedia(); // 呼叫執行自訂函數
+function MM_effectAppearFade(targetElement, duration, from, to, toggle) {
+  Spry.Effect.DoFade(targetElement, {
+    duration: duration,
+    from: from,
+    to: to,
+    toggle: toggle
+  });
+}
+</script>
+<!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<div id="logo_top_menu">
+<a href="../Shop" class="logo_link" title="回50%首頁"><span class="hide">回首頁 / Home</span></a>
+<!--<a href="page_outfit_man.html" class="menublock_link" onMouseOver="this.innerHTML='男裝'" onMouseOut="this.innerHTML='MAN'" style="margin-left: 50px; width: 60px;">MAN</a>
+<a href="page_outfit_woman.html" class="menublock_link" onMouseOver="this.innerHTML='女裝'" onMouseOut="this.innerHTML='WOMAN'" style="width: 80px;">WOMAN</a>-->
+<a href="../Common/CustomPage.aspx?no=4" class="menublock_link" onMouseOver="this.innerHTML='最新消息'" onMouseOut="this.innerHTML='NEWS'" style="width: 70px;">NEWS</a>
+<a href="../Common/CustomPage.aspx?no=5" class="menublock_link" onMouseOver="this.innerHTML='門市地圖'" onMouseOut="this.innerHTML='MAPS'" style="width: 70px;">MAPS</a>
+<a href="../Common/CustomPage.aspx?no=6" class="menublock_link" onMouseOver="this.innerHTML='形象照片'" onMouseOut="this.innerHTML='LOOKBOOK'" style="width: 100px;">LOOKBOOK</a>
+<a href="../Common/CustomPage.aspx?no=1" class="menublock_link" onMouseOver="this.innerHTML='部落格'" onMouseOut="this.innerHTML='BLOG'" style="width: 70px;">BLOG</a>
+<div id="right_top_icon_wrapper">
+<sapn style="margin-left:5px; font-size : 11px; -webkit-transform : scale(0.916); display : inline-block;">FOLLOW US</sapn><br />
+<div id="icon_wrapper">
+<a href="https://www.facebook.com/50percent.tw?ref=ts&fref=ts" target="_blank" class="facebook_nav"><span class="hide">facebook</span></a>
+<a href="http://instagram.com/" target="_blank" class="instagram_nav"><span class="hide">instagram</span></a>
+</div>
+</div>
+ <div id="middle_option">
+<a href="../common/login.aspx" id="loginoutbutton" class="middle_option_link" onMouseOver="this.innerHTML='會員登入'" onMouseOut="this.innerHTML='SIGN IN'">SIGN IN</a> ／ 
+<a href="../Shop/cartlist.aspx" id="shoppingcarbutton" class="middle_option_link" onMouseOver="this.innerHTML='購 物 車'" onMouseOut="this.innerHTML='BAG (3)'" data-flexmenu="flexmenu10" data-dir="w" data-offsets="0,20">BAG (3)</a> ／ 
+<a href="../Member/findorder.aspx" class="middle_option_link" onMouseOver="this.innerHTML='訂 單 資 訊'" onMouseOut="this.innerHTML='ACCOUNT'">ACCOUNT</a>／ 
+<a href="../Shop/itemFav.aspx" id="wishlistbutton" class="middle_option_link" onMouseOver="this.innerHTML='最 愛 蒐 藏'" onMouseOut="this.innerHTML='FAVORITES'" data-flexmenu="flexmenu11" data-dir="w" data-offsets="0,20">FAVORITES</a>
+</div>
+</div>
+<!--購物車 Drop Down Menu 10-->
+<div id="flexmenu10" class="flexdropdownmenu">
+<table width="350" border="0" cellspacing="2" style="border: solid 1px #666; z-index:20000; font-size:12px;">
+  <thead>
+	<tr>
+	  <td style="background:#000; color:#FF0; width: 100px; text-align:center; padding: 5px 0;">MY BAG</td>
+	  <td style="background:#000; color:#FF0; text-align:center; padding: 5px 0;">ITEMS (3)</td>
+	</tr>
+  </thead>
+  <tbody>
+    <!--
+    <tr>
+      <td style="border-bottom: dotted 1px #666; padding: 5px;"><img src="../Shop/CustomUc/C45FiftyPercent201409/images/man_top/a01.jpg" width="150" /></td>
+      <td style="border-bottom: dotted 1px #666; padding: 5px;">雙色塊拼接純棉短T<br />編號:800295<br />顏色:黑灰<br />尺寸:L<br />單價:$ 290</td>
+    </tr>
+    <tr>
+      <td style="border-bottom: dotted 1px #666; padding: 5px;"><img src="../Shop/CustomUc/C45FiftyPercent201409/images/woman_top/w01.jpg" width="150" /></td>
+      <td style="border-bottom: dotted 1px #666; padding: 5px;">雙色塊拼接純棉短T<br />編號:800295<br />顏色:黑灰<br />尺寸:L<br />單價:$ 290</td>
+    </tr>
+    <tr>
+      <td style="border-bottom: dotted 1px #666; padding: 5px;"><img src="../Shop/CustomUc/C45FiftyPercent201409/images/woman_skirt/b600.jpg" width="150" /></td>
+      <td style="border-bottom: dotted 1px #666; padding: 5px;">雙色塊拼接純棉短T<br />編號:800295<br />顏色:黑灰<br />尺寸:L<br />單價:$ 290</td>
+    </tr>
+    -->
+  </tbody>
+  <tfoot>
+    <tr>
+      <td style="border-bottom: dotted 1px #666; padding: 5px;">&nbsp;</td>
+      <td style="border-bottom: dotted 1px #666; padding: 5px;">&nbsp;</td>
+    </tr>
+    <tr>
+      <td colspan="2" style="background:#000; color:#FF0; padding: 5px; text-align: right;"><a href="../Shop/cartlist.aspx" style="display: block; background:#FFF; text-align:center; padding: 3px; color:#000;text-decoration: none; float: right; font-weight:bold;">CHECKOUT</a><span style="float: right; margin-right: 20px;">TOTAL：$1500</span> </td>
+    </tr>
+  </tfoot>
+</table>
+</div>
+<!--最愛蒐藏 Drop Down Menu 11-->
+<div id="flexmenu11" class="flexdropdownmenu">
+<table width="350" border="0" cellspacing="2" style="border: solid 1px #666; z-index:20000; font-size:12px;">
+  <thead>
+    <tr>
+      <td style="background:#000; color:#FF0; width: 100px; text-align:center; padding: 5px 0;">MY WISHLIST</td>
+      <td style="background:#000; color:#FF0; text-align:center; padding: 5px 0;">ITEMS (3)</td>
+    </tr>
+  </thead>
+  <tbody>
+    <!--
+    <tr>
+      <td style="border-bottom: dotted 1px #666; padding: 5px;"><img src="../Shop/CustomUc/C45FiftyPercent201409/images/man_top/a01.jpg" width="150" /></td>
+      <td style="border-bottom: dotted 1px #666; padding: 5px;">雙色塊拼接純棉短T<br />編號:800295<br />顏色:黑灰<br />尺寸:L<br />單價:$ 290</td>
+    </tr>
+    <tr>
+      <td style="border-bottom: dotted 1px #666; padding: 5px;"><img src="../Shop/CustomUc/C45FiftyPercent201409/images/woman_top/w01.jpg" width="150" /></td>
+      <td style="border-bottom: dotted 1px #666; padding: 5px;">雙色塊拼接純棉短T<br />編號:800295<br />顏色:黑灰<br />尺寸:L<br />單價:$ 290</td>
+    </tr>
+    <tr>
+      <td style="border-bottom: dotted 1px #666; padding: 5px;"><img src="../Shop/CustomUc/C45FiftyPercent201409/images/woman_skirt/b600.jpg" width="150" /></td>
+      <td style="border-bottom: dotted 1px #666; padding: 5px;">雙色塊拼接純棉短T<br />編號:800295<br />顏色:黑灰<br />尺寸:L<br />單價:$ 290</td>
+    </tr>
+    -->
+  </tbody>
+  <tfoot>
+    <tr>
+      <td style="border-bottom: dotted 1px #666; padding: 5px;">&nbsp;</td>
+      <td style="border-bottom: dotted 1px #666; padding: 5px;">&nbsp;</td>
+    </tr>
+    <tr>
+      <td colspan="2" style="background:#000; color:#FF0; padding: 5px; text-align: right;"><a href="../Shop/itemFav.aspx" style="display: block; background:#FFF; text-align:center; padding: 3px; color:#000;text-decoration: none; float: right; font-weight:bold;">VIEW MY WISHLIST</a></td>
+    </tr>
+  </tfoot>
+</table>
+</div>
+<!--header-->

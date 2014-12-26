@@ -1,0 +1,26 @@
+<script>
+	$(function() {
+		$("#logoBar").hide();
+		$("#container").css({
+			"padding-top": 0
+		});
+		$(".DefFont:last").hide();
+	});
+	$(function() {
+		$.getJSON("../Shop/CustomUc/C45FiftyPercent201409/data/?name=blog" + (QueryString("fetch") !== "" ? "&fetch=" + QueryString("fetch") : "") + (QueryString("group") !== "" ? "&group=" + QueryString("group") : ""), function(data) {
+			var html = "";
+			for (var i = 0, max = data.data.length; i < max; i++) {
+				html += "<div id=\"blog_block\">";
+				html += "<span style=\"float:right; border:solid 11px #000; margin: 0 0 0 20px;\"><img src=\"" + data.data[i].image + "\" width=\"600\" height=\"400\" /></span>";
+				html += "<h1>" + data.data[i].title.replace(/\n/g,"<br>") + "</h1>";
+				html += "<div>";
+				html += "<p>" + data.data[i].text.replace(/\n/g,"<br>") + "</p>";
+				html += "<p><img src=\"../Shop/CustomUc/C45FiftyPercent201409/images/blog_more_title.jpg\" width=\"33\" height=\"29\" border=\"0\" align=\"texttop\" /><a href=\"../Common/CustomPage.aspx?no=3&id=" + data.data[i].id + "\" class=\"blog_link\" target=\"_self\">繼續閱讀</a></p>";
+				html += "</div>";
+				html += "</div>";
+				html += "<p style=\"clear: both; border-bottom: solid 1px #ccc; margin-bottom: 20px; width: 900px;\">&nbsp;</p>";
+			}
+			$("#ctl00_ContentPlaceHolder1_customDv").append(html);
+		});
+	});
+</script>

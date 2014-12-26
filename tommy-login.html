@@ -1,0 +1,150 @@
+<style>
+  #ctl00_ContentPlaceHolder1_uc_login_btnLogin,#ctl00_ContentPlaceHolder1_uc_login_btnFacebook,#ctl00_ContentPlaceHolder1_uc_login_btnCrLogin {
+    display: none;
+  }
+  #ctl00_ContentPlaceHolder1_uc_login_Panel1 {
+    width:100%;
+  }
+
+  #loginDiv #main_content {
+  	float:none;
+  }
+
+  #main_content {
+    width:1052px;
+    margin:100px auto 7% auto;
+    padding:0;
+    float:none;
+    overflow:visible;
+  }
+  #chkimg {
+    position: absolute;
+    margin-top: -7px;
+    margin-left: 20px;
+  }
+  .round_text>input {
+    border-radius: 5px;
+    padding: 3px;
+    margin: 3px 0;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border: 1px solid #999;
+    color: #999;
+  }
+  .round_text.middle>input {
+    width:208px;
+  }
+  .round_text.long>input {
+    width:328px;
+  }
+</style>
+<script>
+  $(function() {
+    $("#loginImageButton").click(function() {
+      $("#ctl00_ContentPlaceHolder1_uc_login_btnLogin").click();
+    });
+    $("#FBloginImageButton").click(function() {
+      $("#ctl00_ContentPlaceHolder1_uc_login_btnFacebook").click();
+    });
+    $("#ctl00_ContentPlaceHolder1_uc_login_edtCrId").attr("placeholder","英文與數字組合，請勿使用中文或符號");
+    $("#btnCrImageLogin").click(function() {
+      $("#ctl00_ContentPlaceHolder1_uc_login_btnCrLogin").click();
+    });
+    $("#chkimg").attr('src', '../Common/captcha.ashx?rand=' + Math.random());
+  });
+</script>
+<div id="main_content" onmouseover="MM_showHideLayers('footer','','hide')">
+  <div id="main_from" style="padding: 50px; padding-bottom: 50px\9; _padding-bottom: 50px; *padding-bottom: 50px; margin: 100px 0 0 0; height: 500px;">
+  <table width="30%" border="0" cellpadding="0" cellspacing="0" style="float: left;">
+    <tr>
+      <td height="25" colspan="2" class="left_from"><img src="../Shop/CustomUc/C45FiftyPercent201409/images/login_01.jpg" width="100%" /></td>
+    </tr>
+    <tr>
+      <td colspan="2"><h1>SIGN IN 會員登入<br /><span>登入會員開啟購物車結帳功能</span><br />
+      <img src="../Shop/CustomUc/C45FiftyPercent201409/images/line.jpg" /></h1></td>
+    </tr>
+    <tr>
+      <td width="25%" height="35" class="left_from">會員帳號：</td>
+      <td width="75%" class="round_text">[edtUserid]</td>
+    </tr>
+    <tr>
+      <td height="35" class="left_from">會員密碼：</td>
+      <td class="round_text">[edtPwd]</td>
+    </tr>
+    <tr>
+      <td class="left_from">&nbsp;</td>
+      <td align="right" style="padding-right: 15px; padding-right: 19px\9; _padding-right: 19px; *padding-right: 19px;">
+        <p>記住帳號
+        [chkMember]
+        │ <a href="javascript:void(0);" target="_blank" class="login_link" onclick="location.href='../Common/MemberPasswordRecovery.aspx';">忘記密碼 </a></p>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+      [loginImageButton]
+      <a href="javascript:void(0);" id="loginImageButton" class="login_button">登入</a>
+      [FBloginImageButton]
+      <a href="javascript:void(0);" id="FBloginImageButton" class="login_button" style="background-color: #06C; color:#fff;">Facebook 帳號登入</a></td>
+    </tr>
+  </table>
+  <table width="70%" border="0" cellspacing="0" cellpadding="0" style="float: right;">
+  <tr>
+    <td width="128" rowspan="10" style="background: url(../Shop/CustomUc/C45FiftyPercent201409/images/line_2.jpg) repeat-y;">&nbsp;</td>
+    <td colspan="2"><h1>CREATE AN ACCOUNT 立即註冊<br />
+        <span>歡迎來成為流行的頂尖的一份子</span><br />
+      <img src="../Shop/CustomUc/C45FiftyPercent201409/images/line_3.jpg" /></h1></td>
+    </tr>
+  <tr>
+    <td width="11%" height="40" class="left_from">中文全名：</td>
+    <td class="round_text middle">
+      [edtCrName]
+    </td>
+  </tr>
+  <tr>
+    <td height="39" class="left_from">會員帳號：</td>
+    <td class="round_text long">
+      [edtCrId]
+    </td>
+    </tr>
+  <tr>
+    <td height="39" class="left_from">會員密碼：</td>
+    <td class="round_text">
+      [edtCrPws]</td>
+    </tr>
+  <tr>
+    <td height="39" class="left_from">確認密碼：</td>
+    <td class="round_text">
+      [edtCrPws2]</td>
+    </tr>
+  <tr>
+    <td height="39" class="left_from">電子信箱：</td>
+    <td class="round_text long">
+      [edtCrEMail]</td>
+    </tr>
+  <tr>
+    <td height="38" class="left_from">生　　日：</td>
+    <td class="round_text">
+      [edtCrBirdhday]</td>
+    </tr>
+  <tr>
+    <td height="38" class="left_from">手機號碼：</td>
+    <td class="round_text">
+      [edtCrCellphone]</td>
+    </tr>
+  <tr>
+    <td height="38" class="left_from">驗 證 碼：</td>
+    <td class="round_text">
+      [edtCrCaptcha]
+      <!--<input name="Verification code" type="text" class="round_bar" id="Verification code" size="20" />-->
+      <img id="chkimg">
+    </td>
+    </tr>
+  <tr>
+    <td colspan="2" class="left_from" style=" padding-top: 10px;">
+      [btnCrImageLogin]
+      <a href="javascript:void(0);" id="btnCrImageLogin" class="login_button">加入會員</a>
+    </td>
+  </tr>
+  </table>
+</div>
+</div>

@@ -1,0 +1,32 @@
+<link href="../Shop/CustomUc/C45FiftyPercent201409/css/index_building.css" rel="stylesheet" type="text/css" />
+      <link href="../Shop/CustomUc/C45FiftyPercent201409/css/demo-slideshow.css" rel="stylesheet" type="text/css" />
+      <script type="text/javascript" src="../Shop/CustomUc/C45FiftyPercent201409/js/bookmarkscroll.js"></script>
+      <script type="text/javascript" src="../Shop/CustomUc/C45FiftyPercent201409/js/jquery.cycle2.js"></script>
+      <div id="slidepageblack" class="hide">
+         <a href="javascript:bookmarkscroll.scrollTo('sectiona')" class="dot"><span class="hide">page01</span></a>
+         <a href="javascript:bookmarkscroll.scrollTo('sectionb')" class="dot"><span class="hide">page02</span></a>
+         <a href="javascript:bookmarkscroll.scrollTo('sectionc')" class="dot"><span class="hide">page03</span></a>
+      </div>
+      <div id="sectiona" style="height:0;"></div>
+      <div class="cycle-slideshow" data-cycle-fx="scrollHorz data-cycle-timeout=0">
+         <!-- prev/next links -->
+         <div class="cycle-prev"></div>
+         <div class="cycle-next"></div>
+         <img src="../Shop/CustomUc/C45FiftyPercent201409/images/a1.jpg">
+         <img src="../Shop/CustomUc/C45FiftyPercent201409/images/a2.jpg">
+         <img src="../Shop/CustomUc/C45FiftyPercent201409/images/a3.jpg">
+         <img src="../Shop/CustomUc/C45FiftyPercent201409/images/a4.jpg">
+      </div>
+      </div>
+      <p style="height: 33px;">&nbsp;</p>
+      <div id="sectionb"></div>
+      <p>&nbsp;</p>
+      <div id="wrapper_page3"><img src="../Shop/CustomUc/C45FiftyPercent201409/images/main_page3.jpg" width="100%" /></div>
+      <div id="sectionc"></div>
+      <div id="wrapper_page3" style="margin:0;"><img src="../Shop/CustomUc/C45FiftyPercent201409/images/main_page4.jpg" width="100%" border="0" /></div>
+      <p style="clear:both; height: 1px;;">&nbsp;</p>
+      <script>
+         $(function() {
+            $("#right_top_icon_wrapper").append("<div id=\"slidepage\">" + $("#slidepageblack").html() + "</div>");
+         });
+      </script>
