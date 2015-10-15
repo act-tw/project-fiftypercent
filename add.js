@@ -1,3 +1,5 @@
 $(function() {
-	console.log("add.js");
+    QueryString("test") && (function() {
+    	console.log("add.js");
+    })();
 });
